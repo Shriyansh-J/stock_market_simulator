@@ -59,25 +59,41 @@ export class SignInForm extends React.Component<
     const isInvalid = password === "" || email === "";
 
     return (
-      <form onSubmit={(event) => this.onSubmit(event)}>
-        <input
-          value={email}
-          onChange={(event) => this.setStateWithEvent(event, "email")}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={(event) => this.setStateWithEvent(event, "password")}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
-      </form>
+      <div className="container">
+        <form
+          style={{ margin: "2em", padding: "2em" }}
+          className="white"
+          onSubmit={(event) => this.onSubmit(event)}
+        >
+          <h5 className="grey-text text-darken-3 center-align">Log In</h5>
+          <div className="input-field">
+            <input
+              value={email}
+              onChange={(event) => this.setStateWithEvent(event, "email")}
+              type="text"
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="input-field">
+            <input
+              value={password}
+              onChange={(event) => this.setStateWithEvent(event, "password")}
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <div className="input-field center-align">
+            <button
+              className="btn white-text teal darken-1"
+              disabled={isInvalid}
+              type="submit"
+            >
+              Log In
+            </button>
+          </div>
+          {error && <p>{error.message}</p>}
+        </form>
+      </div>
     );
   }
 

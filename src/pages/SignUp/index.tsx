@@ -5,7 +5,6 @@ import { SignUpForm } from "./SingUpForm";
 
 const SignUpComponent = () => (
   <div>
-    <h1>SignUp</h1>
     <SignUpForm />
   </div>
 );

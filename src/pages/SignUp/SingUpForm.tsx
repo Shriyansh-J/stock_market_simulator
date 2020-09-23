@@ -38,19 +38,22 @@ export class SignUpForm extends React.Component<
   constructor(props: InterfaceProps) {
     super(props);
     this.state = { ...SignUpForm.INITIAL_STATE };
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  public onSubmit(event: any) {
+  public onFormSubmit = (event: any) => {
     event.preventDefault();
 
+    console.log(this.props);
     const { email, passwordOne, username } = this.state;
     const { history } = this.props;
+    console.log(history);
 
     auth
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then((authUser: any) => {
         // Create a user in your own accessible Firebase Database too
-        db.doCreateUser(authUser.user.uid, username, email)
+        db.doCreateUser(authUser.user.uid, username, email, 0)
           .then(() => {
             this.setState(() => ({ ...SignUpForm.INITIAL_STATE }));
             history.push(routes.HOME);
@@ -62,7 +65,7 @@ export class SignUpForm extends React.Component<
       .catch((error) => {
         this.setState(SignUpForm.propKey("error", error));
       });
-  }
+  };
 
   public render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
@@ -74,37 +77,61 @@ export class SignUpForm extends React.Component<
       username === "";
 
     return (
-      <form onSubmit={(event) => this.onSubmit(event)}>
-        <input
-          value={username}
-          onChange={(event) => this.setStateWithEvent(event, "username")}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          value={email}
-          onChange={(event) => this.setStateWithEvent(event, "email")}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={passwordOne}
-          onChange={(event) => this.setStateWithEvent(event, "passwordOne")}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={(event) => this.setStateWithEvent(event, "passwordTwo")}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+      <div className="container">
+        <form
+          style={{ margin: "2em", padding: "2em" }}
+          className="white"
+          onSubmit={(event) => this.onFormSubmit(event)}
+        >
+          <h5 className="grey-text text-darken-3 center-align">Sign In</h5>
+          <div className="input-field">
+            <input
+              value={username}
+              onChange={(event) => this.setStateWithEvent(event, "username")}
+              type="text"
+              placeholder="Full Name"
+            />
+          </div>
 
-        {error && <p>{error.message}</p>}
-      </form>
+          <div className="input-field">
+            <input
+              value={email}
+              onChange={(event) => this.setStateWithEvent(event, "email")}
+              type="text"
+              placeholder="Email Address"
+            />
+          </div>
+
+          <div className="input-field">
+            <input
+              value={passwordOne}
+              onChange={(event) => this.setStateWithEvent(event, "passwordOne")}
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+
+          <div className="input-field">
+            <input
+              value={passwordTwo}
+              onChange={(event) => this.setStateWithEvent(event, "passwordTwo")}
+              type="password"
+              placeholder="Confirm Password"
+            />
+          </div>
+
+          <div className="input-field center-align">
+            <button
+              className="btn white-text teal darken-1"
+              disabled={isInvalid}
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
+          {error && <p>{error.message}</p>}
+        </form>
+      </div>
     );
   }
 
