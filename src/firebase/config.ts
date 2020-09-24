@@ -3,13 +3,13 @@ import "firebase/auth";
 import "firebase/firestore";
 
 firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  apiKey: "AIzaSyClD0cL13ypcJjMs3poxrz3eaKwsTG0uuM",
+  authDomain: "stockmarket-simulation.firebaseapp.com",
+  databaseURL: "https://stockmarket-simulation.firebaseio.com",
+  projectId: "stockmarket-simulation",
+  storageBucket: "stockmarket-simulation.appspot.com",
+  messagingSenderId: "321834937804",
+  appId: "1:321834937804:web:bb7fc4d6bdcdfb97380169",
 });
 
 export default firebase;
