@@ -3,12 +3,12 @@ import "firebase/auth";
 import "firebase/database";
 
 const config = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  apiKey: "AIzaSyClD0cL13ypcJjMs3poxrz3eaKwsTG0uuM",
+  authDomain: "stockmarket-simulation.firebaseapp.com",
+  databaseURL: "https://stockmarket-simulation.firebaseio.com",
+  messagingSenderId: "321834937804",
+  projectId: "stockmarket-simulation",
+  storageBucket: "stockmarket-simulation.appspot.com",
 };
 
 if (!firebase.apps.length) {
