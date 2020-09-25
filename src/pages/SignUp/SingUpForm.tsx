@@ -58,12 +58,10 @@ export class SignUpForm extends React.Component<
             history.push(routes.HOME);
           })
           .catch((error) => {
-            console.error(error);
             this.setState(SignUpForm.propKey("error", error));
           });
       })
       .catch((error) => {
-        console.error(error);
         this.setState(SignUpForm.propKey("error", error));
       });
   };
@@ -135,11 +133,7 @@ export class SignUpForm extends React.Component<
           </div>
 
           <div className="input-field center-align">
-            <button
-              className="btn white-text teal darken-1"
-              disabled={isInvalid}
-              type="submit"
-            >
+            <button className="signup-btn" disabled={isInvalid} type="submit">
               Sign Up
             </button>
           </div>
