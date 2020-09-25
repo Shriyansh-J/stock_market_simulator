@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.a77734ba.css",
-  "main.css.map": "static/css/main.a77734ba.css.map",
-  "main.js": "static/js/main.0134564e.js",
-  "main.js.map": "static/js/main.0134564e.js.map",
+  "main.css": "static/css/main.4068de55.css",
+  "main.css.map": "static/css/main.4068de55.css.map",
+  "main.js": "static/js/main.52f62e16.js",
+  "main.js.map": "static/js/main.52f62e16.js.map",
   "static/media/Logo_Blue-01.png": "static/media/Logo_Blue-01.f3f0364f.png",
   "static/media/MaterialIcons-Regular.eot": "static/media/MaterialIcons-Regular.e79bfd88.eot",
   "static/media/MaterialIcons-Regular.ttf": "static/media/MaterialIcons-Regular.a37b0c01.ttf",
@@ -20,5 +20,9 @@
   "static/media/icomoon.eot?g45yae": "static/media/icomoon.34dc2b91.eot",
   "static/media/icomoon.svg?g45yae": "static/media/icomoon.435013aa.svg",
   "static/media/icomoon.ttf?g45yae": "static/media/icomoon.25cefa54.ttf",
-  "static/media/icomoon.woff?g45yae": "static/media/icomoon.6ce61b84.woff"
+  "static/media/icomoon.woff?g45yae": "static/media/icomoon.6ce61b84.woff",
+  "static/media/notification.eot": "static/media/notification.c0d3c94c.eot",
+  "static/media/notification.svg?s3g3t9": "static/media/notification.5bee74ca.svg",
+  "static/media/notification.ttf?s3g3t9": "static/media/notification.0b4ac1dc.ttf",
+  "static/media/notification.woff?s3g3t9": "static/media/notification.651771e1.woff"
 }
