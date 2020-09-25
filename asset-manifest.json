@@ -1,8 +1,9 @@
 {
-  "main.css": "static/css/main.5d841c97.css",
-  "main.css.map": "static/css/main.5d841c97.css.map",
-  "main.js": "static/js/main.72f47ae0.js",
-  "main.js.map": "static/js/main.72f47ae0.js.map",
+  "main.css": "static/css/main.a77734ba.css",
+  "main.css.map": "static/css/main.a77734ba.css.map",
+  "main.js": "static/js/main.0134564e.js",
+  "main.js.map": "static/js/main.0134564e.js.map",
+  "static/media/Logo_Blue-01.png": "static/media/Logo_Blue-01.f3f0364f.png",
   "static/media/MaterialIcons-Regular.eot": "static/media/MaterialIcons-Regular.e79bfd88.eot",
   "static/media/MaterialIcons-Regular.ttf": "static/media/MaterialIcons-Regular.a37b0c01.ttf",
   "static/media/MaterialIcons-Regular.woff": "static/media/MaterialIcons-Regular.012cf6a1.woff",
@@ -19,6 +20,5 @@
   "static/media/icomoon.eot?g45yae": "static/media/icomoon.34dc2b91.eot",
   "static/media/icomoon.svg?g45yae": "static/media/icomoon.435013aa.svg",
   "static/media/icomoon.ttf?g45yae": "static/media/icomoon.25cefa54.ttf",
-  "static/media/icomoon.woff?g45yae": "static/media/icomoon.6ce61b84.woff",
-  "static/media/logo.svg": "static/media/logo.19fb59b5.svg"
+  "static/media/icomoon.woff?g45yae": "static/media/icomoon.6ce61b84.woff"
 }
