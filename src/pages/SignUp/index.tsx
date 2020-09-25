@@ -1,7 +1,8 @@
 import * as React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import * as routes from "../../constants/routes";
-import { SignUpForm } from "./SingUpForm";
+import { SignUpForm } from "./SignUpForm";
+import "./signup.css";
 
 const SignUpComponent = () => (
   <div>
@@ -10,8 +11,11 @@ const SignUpComponent = () => (
 );
 
 export const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
+  <p style={{ backgroundColor: "white", padding: "10px" }}>
+    Don't have an account?{" "}
+    <NavLink className="link" to={routes.SIGN_UP}>
+      Sign Up
+    </NavLink>
   </p>
 );
 

@@ -46,7 +46,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
     // if (appRoute && appRoute.name) {
     //     return appRoute.name;
     // }
-    return "Stockmarket Simulation";
+    return "Virtual Stock Market Simulation";
   }
 
   render() {

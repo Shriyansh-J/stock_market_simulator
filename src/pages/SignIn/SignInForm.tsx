@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as routes from "../../constants/routes";
 import { auth } from "../../firebase";
-
+import "./signin.css";
 interface InterfaceProps {
   email?: string;
   error?: any;
@@ -65,12 +65,12 @@ export class SignInForm extends React.Component<
           className="white"
           onSubmit={(event) => this.onSubmit(event)}
         >
-          <h5 className="grey-text text-darken-3 center-align">Log In</h5>
+          <h3 className="grey-text text-darken-3 center-align">Log In</h3>
           <div className="input-field">
             <input
               value={email}
               onChange={(event) => this.setStateWithEvent(event, "email")}
-              type="text"
+              type="email"
               placeholder="Email Address"
             />
           </div>
@@ -83,14 +83,11 @@ export class SignInForm extends React.Component<
             />
           </div>
           <div className="input-field center-align">
-            <button
-              className="btn white-text teal darken-1"
-              disabled={isInvalid}
-              type="submit"
-            >
+            <button className="login-btn" disabled={isInvalid} type="submit">
               Log In
             </button>
           </div>
+
           {error && <p>{error.message}</p>}
         </form>
       </div>

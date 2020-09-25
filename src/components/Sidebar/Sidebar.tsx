@@ -1,8 +1,8 @@
 import * as React from "react";
 import { SidebarLinks } from "./SidebarLinks";
 import { PriceTag } from "../PriceTag";
-
-const logo = require("../../assets/img/logo.svg");
+import {} from "src/firebase/firebase";
+const logo = require("../../assets/img/Logo_Blue-01.png");
 
 interface SidebarProps {
   currentBalance: number;
@@ -33,9 +33,9 @@ export class Sidebar extends React.Component<SidebarProps, SidebarState> {
   renderLogo() {
     return (
       <div className="logo">
-        <a href="/" className="simple-text logo-mini">
+        <a href="/" className="simple-text logo-small">
           <div className="logo-img">
-            <img src={logo} alt="logo_image" />
+            <img src={logo} width="70px" alt="logo_image" />
           </div>
         </a>
         <a href="/" className="simple-text logo-normal">

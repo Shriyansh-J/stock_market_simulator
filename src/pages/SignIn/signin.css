@@ -1,0 +1,21 @@
+.white {
+  margin: 0 40%;
+  border-radius: 20px;
+  filter: drop-shadow(0 20px 30px rgb(168, 168, 168));
+  width: 50%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.login-btn {
+  border-radius: 10px;
+  background-color: #0066ff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+}
+.login-btn:hover {
+  filter: drop-shadow(0 5px 10px #0066ff);
+}
