@@ -4,6 +4,7 @@ import Quests from "../views/Quests";
 import { SignUp } from "../pages/SignUp";
 import { SignIn } from "../pages/SignIn";
 import { PasswordForget } from "../pages/PasswordForget";
+import { Landing } from "../pages/Landing";
 
 export interface AppRoute {
   path: string;
@@ -29,7 +30,7 @@ const appRoutes: AppRoute[] = [
   { path: "/depot", name: "Depot", icon: "pe-7s-wallet", component: Depot },
   { path: "/market", name: "Market", icon: "pe-7s-graph1", component: Market },
   { path: "/quests", name: "Quests", icon: "pe-7s-note2", component: Quests },
-  { path: "/", name: "signin", icon: "pe-7s-wallet", component: SignIn },
+  { path: "/", name: "landing", icon: "pe-7s-wallet", component: Landing },
 ];
 
 export default appRoutes;

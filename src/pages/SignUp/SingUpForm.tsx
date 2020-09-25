@@ -69,6 +69,7 @@ export class SignUpForm extends React.Component<
 
   public render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
+    console.log(error);
 
     const isInvalid =
       passwordOne !== passwordTwo ||
@@ -129,7 +130,7 @@ export class SignUpForm extends React.Component<
               Sign Up
             </button>
           </div>
-          {error && <p>{error.message}</p>}
+          {error && <p>{error.message}</p> && console.log(error)}
         </form>
       </div>
     );

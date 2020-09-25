@@ -20,7 +20,10 @@ export class SidebarLinks extends React.Component<
 
   render() {
     return appRoutes.map((prop, key) => {
-      if (["signup", "signin", "forgot", "home"].indexOf(prop.name) !== -1) {
+      if (
+        ["signup", "signin", "forgot", "home", "landing"].indexOf(prop.name) !==
+        -1
+      ) {
         return null;
         console.log("hello");
       }
