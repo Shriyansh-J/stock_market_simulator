@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import * as routes from "../../constants/routes";
 import { auth, db } from "../../firebase";
 
@@ -38,16 +39,14 @@ export class SignUpForm extends React.Component<
   constructor(props: InterfaceProps) {
     super(props);
     this.state = { ...SignUpForm.INITIAL_STATE };
-    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  public onFormSubmit = (event: any) => {
+  public onSubmit = (event: any) => {
     event.preventDefault();
 
     console.log(this.props);
     const { email, passwordOne, username } = this.state;
     const { history } = this.props;
-    console.log(history);
 
     auth
       .doCreateUserWithEmailAndPassword(email, passwordOne)
@@ -59,17 +58,31 @@ export class SignUpForm extends React.Component<
             history.push(routes.HOME);
           })
           .catch((error) => {
+            console.error(error);
             this.setState(SignUpForm.propKey("error", error));
           });
       })
       .catch((error) => {
+        console.error(error);
         this.setState(SignUpForm.propKey("error", error));
       });
   };
 
+  public Mymsg(props: any) {
+    const isLoggedIn = props.isCorrect;
+    if (
+      isLoggedIn &&
+      isLoggedIn.message === "Cannot read property 'push' of undefined"
+    ) {
+      return <Link to={routes.SIGN_IN}>Log In</Link>;
+    } else if (isLoggedIn) {
+      return <h1>{isLoggedIn.message}</h1>;
+    }
+    return null;
+  }
+
   public render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
-    console.log(error);
 
     const isInvalid =
       passwordOne !== passwordTwo ||
@@ -82,7 +95,7 @@ export class SignUpForm extends React.Component<
         <form
           style={{ margin: "2em", padding: "2em" }}
           className="white"
-          onSubmit={(event) => this.onFormSubmit(event)}
+          onSubmit={(event) => this.onSubmit(event)}
         >
           <h5 className="grey-text text-darken-3 center-align">Sign In</h5>
           <div className="input-field">
@@ -130,7 +143,7 @@ export class SignUpForm extends React.Component<
               Sign Up
             </button>
           </div>
-          {error && <p>{error.message}</p> && console.log(error)}
+          <this.Mymsg isCorrect={error} />
         </form>
       </div>
     );

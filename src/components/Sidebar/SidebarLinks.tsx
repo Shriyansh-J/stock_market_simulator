@@ -18,6 +18,17 @@ export class SidebarLinks extends React.Component<
     return window.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
 
+  // refresh(temp: any): any {
+  //   if (temp.path === "/depot") {
+  //     console.log(temp.path);
+  //     NotificationManager.success(
+  //       "You have added a new book!",
+  //       "Successful!",
+  //       2000
+  //     );
+  //   }
+  // }
+
   render() {
     return appRoutes.map((prop, key) => {
       if (

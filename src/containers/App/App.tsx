@@ -12,6 +12,11 @@ import { loadState } from "../../state/initialLoad/initialLoadActions";
 import { firebase } from "../../firebase";
 import { withAuthentication } from "../../firebase/withAuthentication";
 
+import "react-notifications/lib/notifications.css";
+import { NotificationContainer } from "react-notifications";
+
+import "./Myapp.css";
+
 interface AppProps {
   currentMoney: number;
   currentStockBalance: number;
@@ -65,6 +70,7 @@ class AppComponent extends React.Component<AppProps> {
                 );
               })}
             </Switch>
+            <NotificationContainer className="notification" />
           </div>
         </div>
       </BrowserRouter>

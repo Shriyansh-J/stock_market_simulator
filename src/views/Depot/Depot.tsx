@@ -20,6 +20,7 @@ import { db } from "../../firebase";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import { NotificationManager } from "react-notifications";
 
 const dbs = firebase.database();
 
@@ -37,10 +38,13 @@ class Depot extends React.Component<DepotProps> {
 
     this.state = {
       users: null,
+      // showNotif: false,
     };
   }
 
   public componentDidMount() {
+    console.log("helo");
+    // setTimeout(() => this.setState({ showNotif: true }), 2000);
     db.onceGetUsers().then((snapshot) =>
       this.setState(() => ({ users: snapshot.val() }))
     );
@@ -53,6 +57,7 @@ class Depot extends React.Component<DepotProps> {
       .ref("users/" + uid)
       .child("amount")
       .set(finalamt);
+    NotificationManager.success("Total amount updated", "Successful!", 2000);
   }
 
   render() {
@@ -63,6 +68,12 @@ class Depot extends React.Component<DepotProps> {
       stockValueDevelopment,
       stocks,
     } = this.props;
+    // if (this.state.showNotif===true)
+    //   NotificationManager.success(
+    //     "You have added a new book!",
+    //     "Successful!",
+    //     2000
+    //   );
 
     return (
       <div className="content">
