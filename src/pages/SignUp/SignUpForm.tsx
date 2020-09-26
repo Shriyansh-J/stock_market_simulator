@@ -72,9 +72,13 @@ export class SignUpForm extends React.Component<
       isLoggedIn &&
       isLoggedIn.message === "Cannot read property 'push' of undefined"
     ) {
-      return <Link to={routes.SIGN_IN}>Log In</Link>;
+      return (
+        <Link className="center-align" to={routes.SIGN_IN}>
+          Log In
+        </Link>
+      );
     } else if (isLoggedIn) {
-      return <h1>{isLoggedIn.message}</h1>;
+      return <h1 className="center-align">{isLoggedIn.message}</h1>;
     }
     return null;
   }
@@ -137,7 +141,9 @@ export class SignUpForm extends React.Component<
               Sign Up
             </button>
           </div>
-          <this.Mymsg isCorrect={error} />
+          <div className="center-align">
+            <this.Mymsg className="center-align" isCorrect={error} />
+          </div>
         </form>
       </div>
     );
