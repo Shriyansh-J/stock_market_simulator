@@ -95,7 +95,7 @@ export class SignUpForm extends React.Component<
           className="white"
           onSubmit={(event) => this.onSubmit(event)}
         >
-          <h5 className="grey-text text-darken-3 center-align">Sign In</h5>
+          <h5 className="grey-text text-darken-3 center-align">Sign Up</h5>
           <div className="input-field">
             <input
               value={username}
